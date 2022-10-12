@@ -1,3 +1,6 @@
+# IMPORTANT
+# https://docs.renovatebot.com/modules/platform/github/#running-as-a-github-app
+
 name: Renovate
 on:
   push:
