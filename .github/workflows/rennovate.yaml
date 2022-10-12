@@ -1,19 +1,24 @@
 name: Renovate
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
+      - name: Get token
+        id: get_token
+        uses: machine-learning-apps/actions-app-token@2d92b2a2bb7030dca3dd14975ae44799debed2e8
+        with:
+          APP_PEM: ${{ secrets.APP_PEM }}
+          APP_ID: ${{ secrets.APP_ID }}
+
       - name: Checkout
         uses: actions/checkout@v2.0.0
+
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v32.118.0
         with:
-          configurationFile: renovate.json
-          token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          LOG_LEVEL: 'debug'
+          configurationFile: example/renovate-config.js
+          token: 'x-access-token:${{ steps.get_token.outputs.app_token }}'
