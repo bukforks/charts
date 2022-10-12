@@ -19,7 +19,7 @@
   },
   "packageRules": [
     {
-      "matchDatasources": ["helm-values", "docker", "github-action"],
+      "matchDatasources": ["helm-values", "docker", "github-actions"],
       "postUpgradeTasks": {
         "commands": [
           "docker run --rm hello-world"
