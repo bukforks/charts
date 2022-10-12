@@ -16,5 +16,16 @@
   },
   "helm-requirements": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["helm-values", "docker", "github-action"],
+      "postUpgradeTasks": {
+        "commands": [
+          "docker run --rm hello-world"
+        ],
+        "fileFilters": []
+      }
+    }
+  ]
 }
