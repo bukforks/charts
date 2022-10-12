@@ -21,6 +21,6 @@ jobs:
         uses: renovatebot/github-action@v32.118.0
         with:
           configurationFile: renovate.json
-          token: 'x-access-token:${{ steps.get_token.outputs.app_token }}'
+          token: '${{ steps.get_token.outputs.app_token }}'
         env:
           LOG_LEVEL: "debug"
