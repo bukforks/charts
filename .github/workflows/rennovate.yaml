@@ -24,3 +24,8 @@ jobs:
           token: 'x-access-token:${{ steps.get_token.outputs.app_token }}'
         env:
           LOG_LEVEL: "debug"
+          RENOVATE_USERNAME: ${{ github.repository_owner }}
+#          RENOVATE_CONFIG_FILE: .github/renovate.json5
+#          RENOVATE_DRY_RUN: false
+#          RENOVATE_REPOSITORIES: ${{ github.repository }}
+#          RENOVATE_GIT_AUTHOR: "Renovate Bot <bot@renovateapp.com>"
