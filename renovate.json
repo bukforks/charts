@@ -22,7 +22,7 @@
       "matchDatasources": ["helm-values", "docker", "github-actions"],
       "postUpgradeTasks": {
         "commands": [
-          "docker run --rm hello-world"
+          "docker run --rm ERROR-THAT-WONT-RUN-DOES-IT-WORK?xD"
         ],
         "fileFilters": []
       }
